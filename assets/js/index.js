@@ -74,16 +74,12 @@ function getWeather(city) {
             $("#uv-index-span").css("background-color", "red");
           }
           //5 Day Forecast
-          console.log(
-            "temp: " +
-              temperature +
-              " humidity: " +
-              humidity +
-              " Wind Speed " +
-              windSpeed +
-              " Uv Index " +
-              UVIndex
-          );
+          let days = response.daily;
+          for (let i = 1; i <= 5; i++) {
+            console.log(days[i].temp.day);
+            console.log(days[i].humidity);
+            console.log(days[i].weather[0].icon);
+          }
         });
     });
 }
