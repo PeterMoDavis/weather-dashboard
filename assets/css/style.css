@@ -28,3 +28,7 @@ h2 {
 .container {
   border: none;
 }
+
+li {
+  cursor: pointer;
+}
