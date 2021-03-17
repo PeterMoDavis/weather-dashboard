@@ -14,8 +14,11 @@ function getWeather(city) {
       console.log(response);
       //save city to local storage
       let cities = $(JSON.parse(localStorage.getItem("cities"))) || [];
-      cities.push(response.name);
 
+      let citiesArr = [...cities];
+      citiesArr.push(response.name);
+      citiesArr.reverse();
+      citiesArr.splice(9);
       let icon = response.weather[0].icon;
       let iconurl = "http://openweathermap.org/img/w/" + icon + ".png";
       //add city name
@@ -25,17 +28,16 @@ function getWeather(city) {
       $("ul").empty();
 
       //loop through array and list cities-------------------
-
-      cities.each((i) => {
+      for (let each of citiesArr) {
         //create list element
-        let li = $(`<li>${cities[i]}</li>`);
+        let li = $(`<li>${each}</li>`);
         //add bootstrap class
         li.addClass("list-group-item");
         //declare ul
         let ul = $("ul");
         //append li to ul
         ul.append(li);
-      });
+      }
 
       $("ul").on("click", "li", (e) => {
         console.log("hello");
@@ -46,7 +48,7 @@ function getWeather(city) {
       });
 
       //set cities back in local storage
-      localStorage.setItem("cities", JSON.stringify(cities));
+      localStorage.setItem("cities", JSON.stringify(citiesArr));
 
       //declare lat and lon for second api call
       let lat = response.coord.lat;
@@ -121,3 +123,30 @@ button.on("click", (e) => {
   let city = input.val();
   getWeather(city);
 });
+
+function init() {
+  let cities = $(JSON.parse(localStorage.getItem("cities"))) || [];
+
+  let citiesArr = [...cities];
+
+  citiesArr.splice(9);
+  for (let each of citiesArr) {
+    //create list element
+    let li = $(`<li>${each}</li>`);
+    //add bootstrap class
+    li.addClass("list-group-item");
+    //declare ul
+    let ul = $("ul");
+    //append li to ul
+    ul.append(li);
+  }
+  $("ul").on("click", "li", (e) => {
+    console.log("hello");
+    let liText = e.target.innerText;
+    console.log(liText);
+    input.val(liText);
+    button.click();
+  });
+}
+
+init();
