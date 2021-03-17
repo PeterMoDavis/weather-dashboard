@@ -113,5 +113,3 @@ button.on("click", (e) => {
   let city = input.val();
   getWeather(city);
 });
-
-initSavedCities();
