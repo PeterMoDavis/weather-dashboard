@@ -18,3 +18,13 @@ p.h3 {
 p {
   line-height: 2;
 }
+
+h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: none;
+}
+
+.container {
+  border: none;
+}
