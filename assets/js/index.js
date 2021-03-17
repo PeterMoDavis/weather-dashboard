@@ -37,6 +37,14 @@ function getWeather(city) {
         ul.append(li);
       });
 
+      $("ul").on("click", "li", (e) => {
+        console.log("hello");
+        let liText = e.target.innerText;
+        console.log(liText);
+        input.val(liText);
+        button.click();
+      });
+
       //set cities back in local storage
       localStorage.setItem("cities", JSON.stringify(cities));
 
