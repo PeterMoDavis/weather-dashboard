@@ -40,3 +40,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Badges
+
+![HTML](https://img.shields.io/badge/html-35.9%25-yellow)
+![CSS](https://img.shields.io/badge/CSS-3.8%25-brightgreen)
+![JavaScript](https://img.shields.io/badge/JavaScript-60.3%25-lightgrey)
